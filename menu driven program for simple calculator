@@ -1,0 +1,33 @@
+l1=[10,20,30]
+l2=[10,20,30]
+print("1.Add element at specific position")
+print("2.Add element at last ")
+print("3.Compare 2 list")
+print("4.Print id of all elements")
+print("5.Find its occurance of an element")
+ch=int(input("Enter your choice"))
+if ch==1:
+ e=input("Enter the element")
+ p=int(input("Enter the position"))
+ l1.insert(p,e)
+ print("updated list:",l1)
+elif ch==2:
+ e=input("Enter element")
+ l1.append(e)
+ print("updated list:",l1)
+elif ch==3:
+ if l1==l2:
+  print("both lists are equal")
+ else:
+  print("lists are not equal")
+elif ch==4:
+ for i in l1:
+  print("ID",id(i))
+elif ch==5:
+ x=int(input("Enter the element to search"))
+ if x in l1:
+  print("index",l1.index(x))
+ else:
+  print("not found")
+else:
+ print("Invalid")
