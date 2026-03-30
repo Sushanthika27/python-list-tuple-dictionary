@@ -1,0 +1,7 @@
+d={}
+n=int(input("Enter number of persons number to be entered"))
+for i in range(n):
+    na=input("Name")
+    no=int(input("Phone number"))
+    d[na]=no
+print(d)
