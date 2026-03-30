@@ -1,0 +1,11 @@
+d={}
+n=int(input("Enter number of persons"))
+for i in range(n):
+    na=input("Name:")
+    no=int(input("Mobile no:"))
+    d[no]=na
+s=int(input("Enter mobile number to be searched"))
+if s in d:
+   print("Name:",d[s])
+else:
+   print("Not found")
