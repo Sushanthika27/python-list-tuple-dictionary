@@ -1,0 +1,37 @@
+def multiply_matrices(A, B):
+ if len(A[0]) != len(B):
+   result = [
+         [sum(A[i][k] * B[k][j] for k in range(len(B))) for j in range(len(B[0]))]
+         for i in range(len(A))
+         ]
+   return result
+def read_matrix(rows, cols, name):
+   matrix = []
+   print(f"Enter elements of matrix {name} ({rows}x{cols}):")
+   for i in range(rows):
+       while True:
+           try:
+             row = list(map(float, input(f"Enter row {i+1} ({cols} numbers): ").split()))
+             if len(row) != cols:
+                raise ValueError(f"Row must have exactly {cols} numbers.")
+             matrix.append(row)
+             break
+         except ValueError as e:
+            print(f"Invalid input: {e}")
+            return matrix
+         if __name__ == "__main__":
+            try:
+               r1 = int(input("Enter number of rows for Matrix A: "))
+               c1 = int(input("Enter number of columns for Matrix A: "))                                                                                                  r2 = int(input("Enter number of rows for Matrix B: "))
+               c2 = int(input("Enter number of columns for Matrix B: "))
+        if c1 != r2:
+           print("Matrix multiplication not possible: columns of A must equal rows of B.")
+        else:
+           A = read_matrix(r1, c1, "A")
+           B = read_matrix(r2, c2, "B")
+           result = multiply_matrices(A, B)
+           print("\nResultant Matrix (A x B):")
+           for row in result:
+              print(" ".join(f"{val:.2f}" for val in row))
+            except ValueError:
+               print("Invalid input. Please enter integers for dimensions.")
